@@ -1,13 +1,11 @@
-import express from "express";
+import express, { Application } from "express";
 
-const server = express();
+export const server: Application = express();
 
 server.use("/", (_req, res) => {
   res.status(200).json({
-    greetings: "Hello from server.ts !!",
+    greetings: "Hello from server.ts",
     current_time: new Date().toLocaleString(),
     uptime: process.uptime()
   });
 });
-
-export default server;

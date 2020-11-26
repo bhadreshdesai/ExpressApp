@@ -1,6 +1,6 @@
 import config from "./config";
 import logger from "./logger";
-import server from "./server";
+import { server } from "./server";
 
 async function startServer() {
   await server.listen({ port: config.PORT, host: config.HOST });
@@ -17,5 +17,5 @@ process.on("unhandledRejection", (err) => {
 async function main() {
   await startServer();
 }
-
+console.log("hello");
 main();
