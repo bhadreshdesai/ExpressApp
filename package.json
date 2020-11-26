@@ -1,14 +1,40 @@
 {
-  "name": "expressapp",
+  "name": "ExpressApp",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "A sample express application",
+  "license": "GPL-3.0",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.ts",
+    "test": "jest --coverage"
   },
-  "dependencies": {},
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": ["/node_modules/"],
+    "verbose": true
+  },
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "winston": "3.3.3"
+  },
   "devDependencies": {
-    "nodemon": "1.18.4"
+    "@types/express": "4.17.8",
+    "@types/jest": "26.0.15",
+    "@types/node": "14.11.8",
+    "@types/supertest": "2.0.10",
+    "jest": "26.6.3",
+    "nodemon": "2.0.4",
+    "supertest": "6.0.1",
+    "ts-jest": "26.4.4",
+    "ts-node": "9.0.0",
+    "typescript": "4.1.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always"
   },
   "keywords": []
 }
