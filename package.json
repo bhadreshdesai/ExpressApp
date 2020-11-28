@@ -6,12 +6,15 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "nodemon src/index.ts",
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["<rootDir>/src/**/*.ts"],
+    "coveragePathIgnorePatterns": ["/node_modules/"],
+    "moduleDirectories": ["node_modules", "src"],
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "coveragePathIgnorePatterns": ["/node_modules/"],
     "verbose": true
   },
   "dependencies": {
