@@ -1,9 +1,9 @@
-import config from "./config";
-import logger from "./logger";
-import { server } from "./server";
+import config from "config";
+import logger from "logger";
+import { server } from "server";
 
-async function startServer() {
-  await server.listen({ port: config.PORT, host: config.HOST });
+function startServer() {
+  server.listen({ port: config.PORT, host: config.HOST });
   logger.info(`Running at http://${config.HOST}:${config.PORT}`);
 }
 
@@ -14,8 +14,8 @@ process.on("unhandledRejection", (err) => {
   process.exit(1);
 });
 
-async function main() {
-  await startServer();
+function main() {
+  startServer();
 }
-console.log("hello");
+logger.info(`From ${__dirname}/index.ts`);
 main();
