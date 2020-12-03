@@ -1,4 +1,5 @@
 import winston from "winston";
+import config from "config";
 
 const logger = winston.createLogger({
   levels: winston.config.syslog.levels,
@@ -10,7 +11,10 @@ const logger = winston.createLogger({
       return `[${label}:${level}] ${message} (${timestamp})`;
     })
   ),
-  transports: [new winston.transports.Console()]
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: config.LOG_FILE })
+  ]
 });
 
 export default logger;
